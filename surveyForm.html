@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Musical Tastes Survey Form</title>
+    <script type="text/javascript" src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <style>
+        * {
+            font-family: roboto, Arial, Helvetica, sans-serif
+        }
+
+        #survey-form {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .line {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin: 5px;
+        }
+
+        input:invalid {
+            border: 1px solid red;
+        }
+
+        input {
+            width: 150px;
+        }
+
+        #description,
+        .description {
+            font-style: italic;
+        }
+        #comments{
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="title">Musical Tastes Survey Form</h1>
+
+    <form id="survey-form" method="POST" action="?submit">
+        <p id="description">Fill in the fields below to take part in the research</p>
+        <div class="line">
+            <label for="name" id="name-label">Name:</label>
+            <input type="text" placeholder="Name" id="name" required>
+        </div>
+        <div class="line">
+            <label for="email" id="email-label">Valid e-mail address:</label>
+            <input type="email" id="email" placeholder="E-mail" required>
+        </div>
+        <div class="line">
+            <label for="number" id="number-label">How many devices do you use to listen to your music?</label>
+            <input type="number" id="number" placeholder="up to 5" min="0" max="5">
+        </div>
+        <div class="line">
+            <label for="dropdown" id="dropdown-label">How many songs are in your media library?</label>
+            <select id="dropdown">
+                <option value="0">0 - 199</option>
+                <option value="1">200 - 499</option>
+                <option value="2">500 - 999</option>
+                <option value="3">1000 - 1999</option>
+                <option value="4">>2000</option>
+            </select>
+        </div>
+        <div class="line">
+            <div>Do you like using earphones?</div>
+            <input type="radio" id="earphones1" value="1" name="earphones">
+            <label for="earphones1">Yes</label>
+            <input type="radio" id="earphones0" value="0" name="earphones">
+            <label for="earphones0">No</label>
+        </div>
+        <div class="line">
+            Where do you like to listen to music the most?
+        </div>
+        <div class="line">
+            <input type="checkbox" id="place1" value="1" name="earphones">
+            <label for="place1">Home</label>
+            <input type="checkbox" id="place2" value="2" name="earphones">
+            <label for="place2">Work</label>
+            <input type="checkbox" id="place3" value="3" name="earphones">
+            <label for="place3">Clubs/Other public places</label>
+            <input type="checkbox" id="place4" value="4" name="earphones">
+            <label for="place4">On the go</label>
+        </div>
+        <div class="line">
+            Tell us more about your listening habits:
+
+
+        </div>
+        <div class="line">
+            <textarea id="comments"></textarea>
+        </div>
+        <div class="line">
+            <input type="submit" id="submit" value="Submit">
+        </div>
+    </form>
+</body>
+
+</html>
