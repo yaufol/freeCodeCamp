@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="fcc_bundle.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <style>
+        @media (max-width:1920px) {
+            #nav-bar {
+                background: red;
+            }
+        }
+    </style>
 </head>
+
 <body>
+    <header id="header"><img id="header-img" src="img/kvokka.jpg">
+        <nav id="nav-bar">
+            <ul>
+                <li><a href="#concept" class="nav-link">Concept</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="#contacts" class="nav-link">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <a id="concept">concept header</a>
+        <a id="pricing">concept header</a>
+        <a id="contacts">concept header</a>
+        <video id="video"></video>
+        <form id="form" method="post" action="https://www.freecodecamp.com/email-submit">
+            <input type="email" id="email" name="email" placeholder="Enter your e-mail" required>
+            <input type="submit" id="submit">
+        </form>
+    </main>
     <!--
 Responsive Web Design Projects - Build a Product Landing Page
 Objective: Build a CodePen.io app that is functionally similar to this: https://codepen.io/freeCodeCamp/full/RKRbwL.
@@ -33,4 +63,5 @@ Remember to use the Read-Search-Ask method if you get stuck.
     -->
 
 </body>
+
 </html>

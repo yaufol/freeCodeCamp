@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Personal Portfolio</title>
+    <script src="fcc_bundle.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <style>
+        *,
+        body,
+        html {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+        }
+        
+        @media (max-width:1920px) {
+            #navbar {
+                background: red;
+            }
+        }
+        
+        #welcome-section {
+            height: 100%;
+        }
+    </style>
 </head>
+
 <body>
+    <nav id="navbar">
+        <ul>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contacts">Contacts</a></li>
+        </ul>
+    </nav>
+    <section id="welcome-section">
+        <h1>Portfolio</h1>
+        Some fucking welcoming text</section>
+    <section id="projects">
+        <div class="project-tile"><a href="#">Link to proj #1</a></div>
+        <div class="project-tile"><a href="#">Link to proj #2</a></div>
+
+    </section>
+    <section id="contacts">
+        Check out my <a href="https://github.com/yaufol" id="profile-link" target="_blank">GitHub profile</a>
+    </section>
     <!--Responsive Web Design Projects - Build a Personal Portfolio Webpage
 Objective: Build a CodePen.io app that is functionally similar to this: https://codepen.io/freeCodeCamp/full/zNBOYG.
 Fulfill the below user stories and get all of the tests to pass. Give it your own personal style.
@@ -27,4 +67,5 @@ Once you're done, submit the URL to your working project with all its tests pass
 Remember to use the Read-Search-Ask method if you get stuck.
 -->
 </body>
+
 </html>
