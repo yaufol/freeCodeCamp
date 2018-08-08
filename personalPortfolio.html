@@ -9,39 +9,118 @@
     <script src="fcc_bundle.js"></script>
     <link rel="stylesheet" href="style.css" type="text/css">
     <style>
-        *,
-        body,
-        html {
-            padding: 0;
-            margin: 0;
-            height: 100%;
+        body {
+            background: black
         }
         
-        @media (max-width:1920px) {
-            #navbar {
-                background: red;
-            }
+        #navbar {
+            background: #111;
+            opacity: 0.95;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            right: 0;
+        }
+        
+        .nav-link:hover {
+            background: #222;
+            cursor: pointer;
+        }
+        
+        .nav-link-text:hover {
+            color: white;
+        }
+        
+        #nav-list {
+            display: flex;
+            height: 100%;
+            flex-direction: row;
+        }
+        
+        .nav-link-text {
+            color: #999;
+            list-style: none;
+            padding: 10px;
+        }
+        
+        #welcome-section h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
         }
         
         #welcome-section {
-            height: 100%;
+            height: 100vh;
+            background: linear-gradient(45deg, #9928f1, #3a19c7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        
+        #projects {
+            display: grid;
+            padding: 10px;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 10px;
+        }
+        
+        .project-tile {
+            display: block;
+            height: 100px;
+            background: white;
+            border-radius: 8px;
+            padding: 8px;
+        }
+        
+        @media screen and (max-width:720px) {
+            #projects {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media screen and (max-width:320px) {
+            #navbar {
+                background: black;
+            }
+            #welcome-section {
+                font-size: 0.7em;
+            }
+            #welcome-section h1 {
+                font-size: 1.5em;
+                margin-bottom: 10px;
+            }
+            #projects {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
 <body>
     <nav id="navbar">
-        <ul>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contacts">Contacts</a></li>
+        <ul id="nav-list">
+            <a href="#projects" class="nav-link">
+                <li class="nav-link-text">Projects</li>
+            </a>
+            <a href="#contacts" class="nav-link">
+                <li class="nav-link-text">Contacts</li>
+            </a>
         </ul>
     </nav>
     <section id="welcome-section">
         <h1>Portfolio</h1>
-        Some fucking welcoming text</section>
+        Lets see what I've done in freeCodeCamp course</section>
     <section id="projects">
-        <div class="project-tile"><a href="#">Link to proj #1</a></div>
-        <div class="project-tile"><a href="#">Link to proj #2</a></div>
+        <a href="tributePage.html" class="project-tile">
+            Tribute page
+        </a>
+        <a href="tributePage.html" class="project-tile">
+            Tribute page
+        </a>
+        <div class="project-tile"><a href="#">Landing page</a></div>
+        <div class="project-tile"><a href="#">Survey form</a></div>
+
 
     </section>
     <section id="contacts">
