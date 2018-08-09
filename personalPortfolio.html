@@ -10,44 +10,15 @@
     <link rel="stylesheet" href="style.css" type="text/css">
     <style>
         body {
-            background: black
+            background: black;
         }
-        
-        #navbar {
-            background: #111;
-            opacity: 0.95;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            right: 0;
-        }
-        
-        .nav-link:hover {
-            background: #222;
-            cursor: pointer;
-        }
-        
-        .nav-link-text:hover {
-            color: white;
-        }
-        
-        #nav-list {
-            display: flex;
-            height: 100%;
-            flex-direction: row;
-        }
-        
-        .nav-link-text {
-            color: #999;
-            list-style: none;
-            padding: 10px;
-        }
-        
+
+
         #welcome-section h1 {
             font-size: 2em;
             margin-bottom: 20px;
         }
-        
+
         #welcome-section {
             height: 100vh;
             background: linear-gradient(45deg, #9928f1, #3a19c7);
@@ -57,29 +28,52 @@
             align-items: center;
             color: white;
         }
-        
+        .nav-link:hover {
+            border-bottom: 4px solid #9928f1;
+        }
+
         #projects {
             display: grid;
-            padding: 10px;
+            padding: 20px;
             grid-template-columns: 1fr 1fr 1fr;
-            grid-gap: 10px;
+            grid-gap: 20px;
         }
-        
+
         .project-tile {
-            display: block;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             height: 100px;
             background: white;
             border-radius: 8px;
             padding: 8px;
+            color: #333;
         }
-        
+
+        .project-tile:hover {
+            color: black;
+            text-shadow: 2px 2px 1px #ccc;
+        }
+
+        .project-status {
+            font-style: italic;
+            font-size: 0.8em;
+        }
+
+        @media screen and (min-width:1200px) {
+            #projects {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+        }
+
         @media screen and (max-width:720px) {
             #projects {
                 grid-template-columns: 1fr 1fr;
             }
         }
-        
-        @media screen and (max-width:320px) {
+
+        @media screen and (max-width:400px) {
             #navbar {
                 background: black;
             }
@@ -114,17 +108,27 @@
     <section id="projects">
         <a href="tributePage.html" class="project-tile">
             Tribute page
+            <div class="project-status">all tests passed</div>
         </a>
-        <a href="tributePage.html" class="project-tile">
-            Tribute page
+        <a href="surveyForm.html" class="project-tile">
+            Survey form
+            <div class="project-status">all tests passed</div>
         </a>
-        <div class="project-tile"><a href="#">Landing page</a></div>
-        <div class="project-tile"><a href="#">Survey form</a></div>
+        <a href="landingPage.html" class="project-tile">
+            Landing page
+            <div class="project-status">tests 14/16</div>
+        </a>
+        <a href="technicalDocumentation.html" class="project-tile">
+            Technical documentation
+            <div class="project-status">all tests passed, content added</div>
+        </a>
+
 
 
     </section>
     <section id="contacts">
-        Check out my <a href="https://github.com/yaufol" id="profile-link" target="_blank">GitHub profile</a>
+        Check out my
+        <a href="https://github.com/yaufol" id="profile-link" target="_blank">GitHub profile</a>
     </section>
     <!--Responsive Web Design Projects - Build a Personal Portfolio Webpage
 Objective: Build a CodePen.io app that is functionally similar to this: https://codepen.io/freeCodeCamp/full/zNBOYG.

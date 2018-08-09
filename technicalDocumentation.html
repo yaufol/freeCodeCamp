@@ -7,130 +7,154 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Technical Documentation</title>
     <script src="fcc_bundle.js"></script>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <!--<link rel="stylesheet" href="style.css" type="text/css">-->
     <style>
-        /*#navbar {
+        *,
+        body,
+        html {
+            padding: 0;
+            margin: 0;
+            font-family: Helvetica;
+        }
+
+
+        #navbar {
             position: fixed;
-            z-index: 100;
             left: 0;
             top: 0;
-        }*/
-        
+            padding: 20px;
+        }
+
         @media screen and (max-width:320px) {
             #navbar {
                 background: red;
             }
+        }
+
+        #navbar header {
+            font-size: 2em;
+            margin-bottom:30px; 
+        }
+        #navbar li{padding: 1em;
+        border:1px solid gray;margin-bottom: -1px;}
+        #navbar li:hover{
+            background: #ddd;
+        }
+        .main-section header {
+            font-weight: bold;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        #main-doc {
+            width: 720px;
+            margin: 0 auto;
+        }
+
+        code {
+            display: block;
+            font-family: 'Courier New', Courier, monospace;
+            background: #ddd;
+            border: 1px solid #555;
+            padding: 2px;
+            border-radius: 3px;
+            margin: 10px 0 10px 0;
+        }
+
+        .nav-link{
+            text-decoration: none;
+            color:black;
+            
+        }
+        li{list-style: none;
+        }
+
+        #Summary-ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+        #Summary-ul li{
+            padding: 5px;
         }
     </style>
 </head>
 
 <body>
     <nav id="navbar">
-        <header>the topic of the technical documentation</header>
+        <header>Weak typification and
+            <br>typecasting in JavaScript</header>
         <ul>
-            <li><a href="#section_1" class="nav-link">Section 1</a></li>
-            <li><a href="#section_2" class="nav-link">Section 2</a></li>
-            <li><a href="#section_3" class="nav-link">Section 3</a></li>
-            <li><a href="#section_4" class="nav-link">Section 4</a></li>
-            <li><a href="#section_5" class="nav-link">Section 5</a></li>
+            <li>
+                <a href="#String_minus_integer" class="nav-link">String minus integer</a>
+            </li>
+            <li>
+                <a href="#String_plus_integer" class="nav-link">String plus integer</a>
+            </li>
+            <li>
+                <a href="#Subtracting_string_from_string" class="nav-link">Subtracting string from string</a>
+            </li>
+            <li>
+                <a href="#Concatenating_fake_integers_vs_strings" class="nav-link">Concatenating fake integers vs strings</a>
+            </li>
+            <li>
+                <a href="#Priority_of_signs" class="nav-link">Priority of signs</a>
+            </li>
+            <li>
+                <a href="#Summary" class="nav-link">Summary</a>
+            </li>
         </ul>
     </nav>
     <main id="main-doc">
-        <section class="main-section" id="section_1">
-            <header>Section 1</header>
-            <p>p#1</p>
-            <p>p#2</p>
-            <code>code#1</code>
-            <ul>
-                <li>li#1</li>
-                <li>li#2</li>
-                <li>li#3</li>
-                <li>li#4</li>
-                <li>li#5</li>
+        <section class="main-section" id="String_minus_integer">
+            <header>String minus integer</header>
+            <p>When you try to subtract an integer from a integer-looking string JavaScript casts a new type on the string automatically
+                and do the math:</p>
+            <code>'5' - 3 //2</code>
+            <p>As a result the correct result is returned</p>
+        </section>
+        <section class="main-section" id="String_plus_integer">
+            <header>String plus integer</header>
+            <p>Imagine that now you need to calculate a sum of a string and an integer:</p>
+            <code>'5' + 3 //'53'</code>
+            <p>Voila! Now you have two parts glued to each other. It's called concatenation. Just get used to it. Hopefully
+                it works the same if you swap the places.</p>
+        </section>
+        <section class="main-section" id="Subtracting_string_from_string">
+            <header>Subtracting string from string</header>
+            <p>Now what do you think will happen if you try to subtract one string from another?</p>
+            <code>'5' - '3'//2</code>
+            <p>As JavaScript sees minus sign it supposes that we deal with numbers and tries to convert strings to integers.</p>
+        </section>
+        <section class="main-section" id="Concatenating_fake_integers_vs_strings">
+            <header>Concatenating fake integers vs strings</header>
+            <p>Accoring to console it is completely okay to put as many + signs in a row. Just take a look:</p>
+            <code>
+                '5' + + '5'//'55'<br>'foo' + + 'bar'//'fooNaN'
+            </code>
+            <p>If you feed the console two integer-looking strings it will concatenate them but if you try to concatenate two
+                strings the same way it will output NaN which is a result of a failed type conversion. What?</p>
+
+        </section>
+        <section class="main-section" id="Priority_of_signs">
+            <header>Priority of signs</header>
+            <p>Let x equal 3.</p>
+            <code>var x = 3;<br>'5' + x - x//50</code>
+            <p>Concatenated integer. I'm leaving.</p>
+
+        </section>
+        <section class="main-section" id="Summary">
+            <header>Summary</header>
+
+            <ul id="Summary-ul">
+                <li>Always</li>
+                <li>cast</li>
+                <li>proper</li>
+                <li>types</li>
+                <li>on variables.</li>
             </ul>
         </section>
-        <section class="main-section" id="section_2">
-            <header>Section 2</header>
-            <p>p#3</p>
-            <p>p#4</p>
-            <code>code#2</code>
-        </section>
-        <section class="main-section" id="section_3">
-            <header>Section 3</header>
-            <p>p#5</p>
-            <p>p#6</p>
-            <code>code#3</code>
-        </section>
-        <section class="main-section" id="section_4">
-            <header>Section 4</header>
-            <p>p#7</p>
-            <p>p#8</p>
-            <code>code#4</code>
-        </section>
-        <section class="main-section" id="section_5">
-            <header>Section 5</header>
-            <p>p#9</p>
-            <p>p#10</p>
-            <code>code#5</code>
-        </section>
-
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-
-
-
 
     </main>
     <!--Responsive Web Design Projects - Build a Technical Documentation Page
