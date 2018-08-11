@@ -43,7 +43,9 @@
         .main-section:nth-child(odd) {
             background: rgba(255, 255, 255, 1)
         }
-
+.main-section:last-child{
+    background: rgba(0, 0, 158, 0.8);
+}
         #concept {
             display: flex;
             flex-direction: row;
@@ -74,13 +76,15 @@
             margin: 5px;
         }
 
-        .header-white, input[type=email] {
+        .header-white,
+        input[type=email] {
             color: #00009e;
             background: rgba(255, 255, 255, 0.8);
             border: 1px solid #00009e;
         }
 
-        .header-indigo, input[type=submit] {
+        .header-indigo,
+        input[type=submit] {
             color: white;
             background: rgba(0, 0, 158, 0.8);
         }
@@ -167,12 +171,13 @@
 
         }
 
-        input{
-            padding:8px;
+        input {
+            padding: 8px;
         }
-        input[type=submit]{
-outline: none;
-            border: 1px solid #00009e;
+
+        input[type=submit] {
+            outline: none;
+            border: 1px solid white;
         }
     </style>
 </head>
@@ -205,7 +210,11 @@ outline: none;
                 <header class="header-indigo">Finest quality</header>
             </div>
             <div class="concept-center-block">Meet your new favorite T-shirt:
-                <video id="video" src="media/video/landing-promo.mp4" width="100%" autoplay="autoplay"></video>
+                <video id="video" width="100%" autoplay="autoplay" preload="auto">
+                    <source src="https://github.com/yaufol/freeCodeCamp/blob/master/media/video/landing-promo.mp4?raw=true" type="video/mp4">
+                    <p>Your browser doesn't support HTML5 video. Here is a
+                        <a href="https://github.com/yaufol/freeCodeCamp/blob/master/media/video/landing-promo.mp4?raw=true">link to the video</a> instead.</p>
+                </video>
             </div>
             <div class="concept-side-block">
                 <header class="header-white">Special offer</header>
