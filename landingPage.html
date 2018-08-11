@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>MAI T-shirt</title>
     <script src="fcc_bundle.js"></script>
     <link rel="stylesheet" href="style.css" type="text/css">
     <style>
@@ -14,6 +14,7 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            background-position: center center;
             padding-top: 400px;
         }
 
@@ -21,12 +22,13 @@
             border-bottom: 4px solid #00009e;
         }
 
-        #header{
+        #header {
             display: flex;
             flex-direction: row;
         }
-        #header-img{
-            height:100%;
+
+        #header-img {
+            height: 100%;
         }
 
         @media (max-width:1920px) {
@@ -36,10 +38,6 @@
         #main {
             display: flex;
             flex-direction: column;
-        }
-
-        .main-section {
-            height: 50%;
         }
 
         .main-section:nth-child(odd) {
@@ -76,15 +74,31 @@
             margin: 5px;
         }
 
-        .header-white {
+        .header-white, input[type=email] {
             color: #00009e;
             background: rgba(255, 255, 255, 0.8);
-            border:1px solid #00009e;
+            border: 1px solid #00009e;
         }
 
-        .header-indigo {
+        .header-indigo, input[type=submit] {
             color: white;
             background: rgba(0, 0, 158, 0.8);
+        }
+
+        .font-white {
+            color: white;
+            text-shadow: -1px -1px 0 rgba(0, 0, 158, 0.8),
+            1px -1px 0 rgba(0, 0, 158, 0.8),
+            -1px 1px 0 rgba(0, 0, 158, 0.8),
+            1px 1px 0 rgba(0, 0, 158, 0.8);
+        }
+
+        .font-indigo {
+            color: rgba(0, 0, 158);
+            text-shadow: -1px -1px 0 white,
+            1px -1px 0 white,
+            -1px 1px 0 white,
+            1px 1px 0 white;
         }
 
         .concept-center-block {
@@ -93,7 +107,7 @@
             color: #00009e;
             font-size: 18px;
             font-weight: 100;
-            padding-top:30px !important;
+            padding-top: 30px !important;
             text-transform: uppercase;
 
         }
@@ -102,29 +116,82 @@
         .concept-center-block {
             padding: 10px;
         }
+
+        #prices {
+            padding: 10% 20% 20% 20%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 16px;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 0, 158, 0.2);
+            border-radius: 8px;
+            height: 300px;
+            background-size: cover !important;
+            background-position: center !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding-bottom: 10px;
+        }
+
+        .product-price {
+            background: #ffc600;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: 700;
+            color: #513f00;
+        }
+
+        .product-image {
+            width: 100%;
+        }
+
+        .quantity {
+            font-size: 100px;
+            font-weight: 700;
+        }
+
+        #order {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            padding: 30px 0;
+
+        }
+
+        input{
+            padding:8px;
+        }
+        input[type=submit]{
+outline: none;
+            border: 1px solid #00009e;
+        }
     </style>
 </head>
 
 <body>
     <header id="header">
-        
+
         <nav id="nav-bar">
-<<<<<<< HEAD
+
             <img id="header-img" src="https://github.com/yaufol/freeCodeCamp/blob/master/media/images/logo.png?raw=true">
-=======
->>>>>>> e2609d08c00a8e4994c7448cfaa837fe85b17799
 
             <a href="#concept" class="nav-link">
                 concept
             </a>
-            <a href="#pricing" class="nav-link">
-                pricing
+            <a href="#prices" class="nav-link">
+                prices
             </a>
             <a href="#order" class="nav-link">
                 order
-            </a>
-            <a href="#contacts" class="nav-link">
-                contacts
             </a>
         </nav>
     </header>
@@ -138,7 +205,7 @@
                 <header class="header-indigo">Finest quality</header>
             </div>
             <div class="concept-center-block">Meet your new favorite T-shirt:
-                <video id="video" src="media/video/landing-promo.mp4" width="100%"  autoplay="autoplay"></video>
+                <video id="video" src="media/video/landing-promo.mp4" width="100%" autoplay="autoplay"></video>
             </div>
             <div class="concept-side-block">
                 <header class="header-white">Special offer</header>
@@ -146,16 +213,33 @@
                 <header class="header-white">Loyalty program</header>
             </div>
         </section>
-        <section id="pricing" class="main-section">pricing header</section>
-        <section id="order" class="main-section">order header
+        <section id="prices" class="main-section">
+            <div class="product-card" style="background: url(media/images/white.jpg);">
+                <div class="quantity font-white">1</div>
+                <div class="product-price">700₽</div>
+            </div>
+            <div class="product-card" style="background: url(media/images/blue.jpg);">
+                <div class="quantity font-indigo">1</div>
+                <div class="product-price">700₽</div>
+            </div>
+            <div class="product-card">
+                <div class="quantity">
+                    <span class=" font-white">1</span>+
+                    <span class=" font-indigo">1</span>
+                </div>
+                <div class="product-price">1190₽</div>
+            </div>
+            <div class="product-card">
+                <div class="quantity">10</div>
+                <div class="product-price">5600₽</div>
+            </div>
+        </section>
+        <section id="order" class="main-section">
             <form id="form" method="post" action="https://www.freecodecamp.com/email-submit">
                 <input type="email" id="email" name="email" placeholder="Enter your e-mail" required>
-                <input type="submit" id="submit">
+                <input type="submit" id="submit" value="Order">
             </form>
         </section>
-        <section id="contacts" class="main-section">contacts header</section>
-
-
     </main>
     <!--
 Responsive Web Design Projects - Build a Product Landing Page
